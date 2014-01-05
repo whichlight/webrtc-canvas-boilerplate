@@ -60,8 +60,14 @@ var drawVideo = function(){
 var processImage = function(){
   var pixels = ctx.getImageData(0, 0, canvas.width, canvas.height);
   var pixData = pixels.data;
-  for (i = 0; i < canvas.width * canvas.height; i++) {
-     //do processing here
+  for (i = 0; i < canvas.width; i++) {
+    for (j = 0; j < canvas.height; j++) {
+      //you can process individual pixels here
+      var r = pixData[j*canvas.width+i*4];
+      var g = pixData[j*canvas.width+i*4+1];
+      var b = pixData[j*canvas.width+i*4+2];
+      var alpha = pixData[j*canvas.width+i*4+3];
+    }
   }
   ctx.putImageData(pixels, 0, 0);
 }
