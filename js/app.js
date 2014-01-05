@@ -70,6 +70,7 @@ var processImage = function(){
       var alpha = pixData[index+3];
     }
   }
+  pixels.data = pixData;
   ctx.putImageData(pixels, 0, 0);
 }
 
